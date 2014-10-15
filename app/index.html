@@ -32,7 +32,7 @@
 		         <a href="#" class="navbar-link">Setting</a>
 		      </p>
 		   </div>
-		</div>
+		</nav>
 		</div>
 		<div class="container" ng-controller="indexController">
 			<div class="row">
@@ -40,113 +40,32 @@
 					<div class="col-xs-3">
 						<div class="easy-tree">
 						        <ul>
-						            <li>商住楼{{test}}
-						                <ul>
-						                    <li>1楼</li>
-						                    <li>2楼
-						                        <ul>
-						                            <li>201</li>
-						                            <li>202</li>
-						                            <li>203</li>
-						                            <li>204</li>
-						                            <li>205</li>
-						                            <li>206</li>
-						                            <li>207</li>
-						                            <li>208</li>
-						                            <li>209</li>
-						                        </ul>
-						                    </li>
-						                    <li>3楼
-						                    	<ul>
-						                    	    <li>301</li>
-						                    	    <li>302</li>
-						                    	    <li>303</li>
-						                    	    <li>304</li>
-						                    	    <li>305</li>
-						                    	    <li>306</li>
-						                    	    <li>307</li>
-						                    	    <li>308</li>
-						                    	    <li>309</li>
-						                    	</ul>
-						                    </li>
-						                    <li>4楼</li>
-						                </ul>
+						        	<li ng-click="selectedBuilds(building.build,$event)">ROOT
+						        		<ul>
+						           		<li ng-repeat="buil in building.build" ng-click="selectedBuil(buil,$event)">{{buil.name}}
+						                	<ul>
+						                		<li ng-repeat="storey in buil.storeys" ng-click="selectedStorey(storey,$event)">{{storey.storeyId}}
+						                			<!--
+						                			<ul>
+						                				<li ng-repeat="room in storey.rooms" ng-click="building.Selected()">{{room}}</li>
+						                			</ul>
+						                			-->
+						                		</li>
+						                	</ul>
+						           		</li>
+						           		</ul>
 						            </li>
 						        </ul>
 						    </div>
 					</div>
 					<div class="col-xs-7">
 						<div class="">
-							<ul class="list-inline building">
-								<li>
+							<ul class="list-inline building" ng-repeat="room in rooms">
+								<li ng-repeat="rm in room">
 									<img src="img/chinaz6.png">
-									<span>201</span>
-								</li>
-								<li>
-									<img src="img/chinaz4.png">
-									<span>202</span>
-								</li>
-								<li>
-									<img src="img/chinaz4.png">
-									<span>203</span>
-								</li>
-								<li>
-									<img src="img/chinaz6.png">
-									<span>204</span>
-								</li>
-								<li>
-									<img src="img/chinaz4.png">
-									<span>205</span>
-								</li>
-								<li>
-									<img src="img/chinaz6.png">
-									<span>206</span>
-								</li>
-								<li>
-									<img src="img/chinaz4.png">
-									<span>207</span>
-								</li>
-								<li>
-									<img src="img/chinaz4.png">
-									<span>208</span>
+									<span>{{rm}}</span>
 								</li>
 							</ul>
-							<hr>
-							<ul class="list-inline building">
-								<li>
-									<img src="img/chinaz6.png">
-									<span>301</span>
-								</li>
-								<li>
-									<img src="img/chinaz4.png">
-									<span>302</span>
-								</li>
-								<li>
-									<img src="img/chinaz4.png">
-									<span>303</span>
-								</li>
-								<li>
-									<img src="img/chinaz4.png">
-									<span>304</span>
-								</li>
-								<li>
-									<img src="img/chinaz4.png">
-									<span>305</span>
-								</li>
-								<li>
-									<img src="img/chinaz4.png">
-									<span>306</span>
-								</li>
-								<li>
-									<img src="img/chinaz4.png">
-									<span>307</span>
-								</li>
-								<li>
-									<img src="img/chinaz4.png">
-									<span>308</span>
-								</li>
-							</ul>
-							<br>
 						</div>
 					</div>
 					<div class="col-xs-2">
